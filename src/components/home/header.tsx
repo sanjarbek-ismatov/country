@@ -6,7 +6,9 @@ import {
   faToggleOff,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 const Header = () => {
+  const [theme, setTheme] = useState<string>("");
   return (
     <header>
       <nav>
@@ -22,10 +24,11 @@ const Header = () => {
               onClick={() => {
                 localStorage.setItem(
                   "theme",
-                  localStorage.getItem("theme") ? "false" : "true"
+                  localStorage.getItem("theme") === "light" ? "dark" : "light"
                 );
+                setTheme(localStorage.getItem("theme") || "light");
               }}
-              icon={localStorage.getItem("theme") ? faToggleOn : faToggleOff}
+              icon={theme === "dark" ? faToggleOn : faToggleOff}
             />
           </div>
         </div>
