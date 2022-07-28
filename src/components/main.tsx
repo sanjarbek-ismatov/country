@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { data, fetcherThunk } from "../store/store";
-import { init } from "../store/store";
 
 const Main = ({ filter }: { filter: string }) => {
   const state = useSelector((state: data) => state.fetcher);
