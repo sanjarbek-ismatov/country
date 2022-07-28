@@ -20,7 +20,7 @@ const Main = ({ filter }: { filter: string }) => {
       <main>
         <h1>Countries in the world</h1>
         <div>
-          {state &&
+          {(state &&
             state.error === undefined &&
             state.data.data &&
             state.data.data
@@ -49,7 +49,7 @@ const Main = ({ filter }: { filter: string }) => {
                     </div>
                   </div>
                 );
-              })}
+              })) || <h1>Not found this country!</h1>}
         </div>
       </main>
     </>
