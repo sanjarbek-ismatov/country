@@ -4,10 +4,10 @@ import {
   ReactFragment,
   ReactPortal,
   useEffect,
-} from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import select, { data, fetcherThunk } from "../store/store";
+} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { data, fetcherThunk } from '../store/store';
 
 const Main = ({ filter }: { filter: string }) => {
   const state = useSelector((state: { fetcher: data }) => state.fetcher);
@@ -19,7 +19,7 @@ const Main = ({ filter }: { filter: string }) => {
 
   return (
     <>
-      <div className={state.loading ? "preloader" : ""}>
+      <div className={state.loading ? 'preloader' : ''}>
         <span></span>
       </div>
       <main>
@@ -64,12 +64,8 @@ const Main = ({ filter }: { filter: string }) => {
                   return (
                     <div className="country" key={id}>
                       <div className="img">
-                        <Link to={"/country/" + country.cca3}>
-                          <img
-                            onClick={() => dispatch(select(country.cca3))}
-                            className="flag"
-                            src={country.flags.svg}
-                          />
+                        <Link to={'/country/' + country.cca3}>
+                          <img className="flag" src={country.flags.svg} />
                         </Link>
                       </div>
                       <div className="desc">
@@ -78,10 +74,10 @@ const Main = ({ filter }: { filter: string }) => {
                         <p>
                           Population:
                           {Math.floor(country.population / 100000) / 10 > 0
-                            ? " " +
+                            ? ' ' +
                               Math.floor(country.population / 100000) / 10 +
-                              "M+"
-                            : " " + country.population}
+                              'M+'
+                            : ' ' + country.population}
                         </p>
                       </div>
                     </div>

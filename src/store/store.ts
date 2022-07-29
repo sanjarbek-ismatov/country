@@ -2,39 +2,31 @@ import {
   createSlice,
   configureStore,
   createAsyncThunk,
-} from "@reduxjs/toolkit";
-import axios from "axios";
-import { createLogger } from "redux-logger";
+} from '@reduxjs/toolkit';
+import axios from 'axios';
+import { createLogger } from 'redux-logger';
 export type init = {
   loading: boolean;
   data: {};
-  selected: {};
+
   error: undefined | {};
 };
 
 const initialState: data = {
   loading: false,
   data: {},
-  selected: undefined,
+
   error: undefined,
 };
-export const fetcherThunk = createAsyncThunk("thunkfetcher", async () => {
+export const fetcherThunk = createAsyncThunk('thunkfetcher', async () => {
   return await axios
-    .get("https://restcountries.com/v3.1/all")
+    .get('https://restcountries.com/v3.1/all')
     .then((data) => data);
 });
 const fetcherSlice = createSlice({
-  name: "fetcher",
+  name: 'fetcher',
   initialState: initialState,
-  reducers: {
-    select: (state, action) => {
-      state.selected =
-        state.data.data?.filter((el) => {
-          el.cca3 == action.payload;
-        }) || undefined;
-      console.log(action.payload, state.selected);
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetcherThunk.pending, (state) => {
       (state.loading = true), (state.data = {}), (state.error = undefined);
@@ -91,4 +83,3 @@ export type countryType = {
   region: string;
   subregion: string;
 };
-export default fetcherSlice.actions.select;
