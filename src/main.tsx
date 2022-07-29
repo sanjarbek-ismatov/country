@@ -5,7 +5,7 @@ import App from "./App";
 import About from "./components/about/About";
 import { store } from "./store/store";
 import "./styles/main.scss";
-
+// updated on codesandbox
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Provider store={store}>
