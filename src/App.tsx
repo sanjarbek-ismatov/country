@@ -17,7 +17,7 @@ const App = () => {
   }, [theme]);
   return (
     <themeContext.Provider value={{ theme, toggleTheme }}>
-      <div id={theme}>
+      <div className={theme}>
         <Header
           handleChange={(e) => {
             setQuery(e.target.value);

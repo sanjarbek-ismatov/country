@@ -8,6 +8,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { data, fetcherThunk } from "../store/store";
+import Preloader from "./preloader";
 
 const Main = ({ filter }: { filter: string }) => {
   const state = useSelector((state: { fetcher: data }) => state.fetcher);
@@ -19,12 +20,10 @@ const Main = ({ filter }: { filter: string }) => {
 
   return (
     <>
-      <div className={state.loading ? "preloader" : ""}>
-        <span></span>
-      </div>
+      <Preloader />
       <main>
         <h1>Countries in the world</h1>
-        <div>
+        <div className="main">
           {state &&
             state.error === undefined &&
             state.data.data &&
@@ -71,18 +70,18 @@ const Main = ({ filter }: { filter: string }) => {
                             src={country.flags.svg}
                           />
                         </Link>
-                      </div>
-                      <div className="desc">
-                        <h3>{country.name.common}</h3>
-                        <p>Region: {country.region}</p>
-                        <p>
-                          Population:
-                          {Math.floor(country.population / 100000) / 10 > 0
-                            ? " " +
-                              Math.floor(country.population / 100000) / 10 +
-                              "M+"
-                            : " " + country.population}
-                        </p>
+                        <div className="desc">
+                          <h3>{country.name.common}</h3>
+                          <p>Region: {country.region}</p>
+                          <p>
+                            Population:
+                            {Math.floor(country.population / 100000) / 10 > 0
+                              ? " " +
+                                Math.floor(country.population / 100000) / 10 +
+                                "M+"
+                              : " " + country.population}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   );

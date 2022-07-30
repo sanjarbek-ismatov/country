@@ -9,10 +9,10 @@ import {
 import React, { useContext, useState } from "react";
 import { themeContext } from "../context/themecontext";
 type changeEvent = {
-  value: string;
-  handleChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  handleChange?: (value: React.ChangeEvent<HTMLInputElement>) => void;
 };
-const Header = (props: changeEvent) => {
+const Header = (props?: changeEvent) => {
   const { theme, toggleTheme } = useContext(themeContext);
 
   return (
@@ -21,18 +21,20 @@ const Header = (props: changeEvent) => {
         <nav>
           <Link to="/">Home</Link>
           <div className="content">
-            <div className="input">
-              <FontAwesomeIcon
-                className="searchIcon"
-                icon={faMagnifyingGlass}
-              />
-              <input
-                onChange={props.handleChange}
-                value={props.value}
-                type="text"
-                placeholder="Mamlakatni yozing..."
-              />
-            </div>
+            {props?.handleChange && (
+              <div className="input">
+                <FontAwesomeIcon
+                  className="searchIcon"
+                  icon={faMagnifyingGlass}
+                />
+                <input
+                  onChange={props?.handleChange}
+                  value={props?.value}
+                  type="text"
+                  placeholder="Mamlakatni yozing..."
+                />
+              </div>
+            )}
             <div className="switch">
               <FontAwesomeIcon
                 className="switchIcon"
