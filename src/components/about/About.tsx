@@ -27,9 +27,9 @@ const About = () => {
         {state &&
           state.loading === false &&
           state.data &&
-          state.data.map((el) => {
+          state.data.map((el, id:number) => {
             return (
-              <div className="country-one">
+              <div className="country-one" key={id}>
                 <div>
                   <img src={el.flags.svg} />
                   <h1>

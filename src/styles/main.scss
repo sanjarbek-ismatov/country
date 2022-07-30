@@ -59,9 +59,9 @@
   main {
     .main {
       .country {
-        -webkit-box-shadow: 0px 6px 64px 13px rgba(158, 158, 158, 1);
-        -moz-box-shadow: 0px 6px 64px 13px rgba(158, 158, 158, 1);
-        box-shadow: 0px 6px 64px 13px rgba(158, 158, 158, 1);
+        -webkit-box-shadow: 0px 6px 64px 13px rgb(201, 201, 201);
+        -moz-box-shadow: 0px 6px 64px 13px rgba(201, 201, 201, 1);
+        box-shadow: 0px 6px 64px 13px rgba(201, 201, 201, 1);
       }
     }
   }
@@ -95,6 +95,7 @@ main {
       .desc {
         height: 30px;
         width: 100%;
+        line-height: 25px;
       }
     }
     .country:last-child {
