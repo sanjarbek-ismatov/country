@@ -39,12 +39,7 @@
   background-color: #151b6a;
   color: #fff;
   min-height: 100vh;
-  .country-one:first-child {
-    div {
-      -webkit-box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-      -moz-box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-      box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-    }
+  
   }
   main {
     .main {
@@ -55,18 +50,12 @@
       }
     }
   }
-}
+
 .light {
   background-color: #fff;
   color: #000;
   min-height: 100vh;
-  .country-one {
-    div:first-child {
-      -webkit-box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-      -moz-box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-      box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-    }
-  }
+ 
   main {
     .main {
       .country {
