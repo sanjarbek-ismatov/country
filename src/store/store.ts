@@ -2,9 +2,9 @@ import {
   createSlice,
   configureStore,
   createAsyncThunk,
-} from '@reduxjs/toolkit';
-import axios from 'axios';
-import { createLogger } from 'redux-logger';
+} from "@reduxjs/toolkit";
+import axios from "axios";
+import { createLogger } from "redux-logger";
 export type init = {
   loading: boolean;
   data: {};
@@ -13,18 +13,23 @@ export type init = {
 };
 
 const initialState: data = {
-  loading: false,
+  loading: true,
   data: {},
 
   error: undefined,
 };
-export const fetcherThunk = createAsyncThunk('thunkfetcher', async () => {
-  return await axios
-    .get('https://restcountries.com/v3.1/all')
-    .then((data) => data);
-});
+export const fetcherThunk = createAsyncThunk(
+  "thunkfetcher",
+  async (query?: string) => {
+    return await axios
+      .get("https://restcountries.com/v3.1/all")
+      .then((data) =>
+        query ? data.data?.filter((el: countryType) => el.cca3 === query) : data
+      );
+  }
+);
 const fetcherSlice = createSlice({
-  name: 'fetcher',
+  name: "fetcher",
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -52,10 +57,10 @@ export const store = configureStore({
 
 export type data = {
   data: {
-    data?: countryType[];
+    data?: countryType[] | undefined;
   };
   error: {} | undefined;
-  selected: countryType[] | undefined;
+
   loading: boolean;
 };
 export type countryType = {
