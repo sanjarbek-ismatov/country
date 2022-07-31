@@ -9,14 +9,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+
     img {
       max-width: 400px;
       height: auto;
       border: 1px solid gray;
     }
     .gerb {
-      width: 200px;
+      width: 100%;
       min-height: 200px;
       border: none;
       display: flex;
@@ -31,8 +31,9 @@
         animation: animate 1s infinite ease;
       }
       img {
-        width: 100%;
+        width: 200px;
         height: auto;
+        margin: 10px auto;
         border: none;
       }
     }
@@ -63,8 +64,9 @@
     transform: rotate(360deg);
   }
 }
-@media (max-width: 401px) {
+@media (max-width: 400px) {
   .country-one {
+    padding-top: 20px;
     div {
       img {
         width: 100%;

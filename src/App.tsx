@@ -3,6 +3,7 @@ import { themeContext } from "./components/context/themecontext";
 import { useEffect, useState } from "react";
 
 import Main from "./components/main";
+
 const App = () => {
   const [theme, setTheme] = useState<string>("light");
   const [query, setQuery] = useState<string>("");

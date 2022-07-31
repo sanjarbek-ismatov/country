@@ -109,3 +109,18 @@ main {
   background-color: #151b6a;
   border-radius: 25px;
 }
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #1d269e;
+  color: rgba(175, 175, 175, 0.986);
+  .copyright {
+    padding: 5px 0;
+    font-size: 15px;
+  }
+  div {
+    font-size: 10px;
+    padding: 5px 0;
+  }
+}
