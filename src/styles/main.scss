@@ -39,29 +39,28 @@
   background-color: #151b6a;
   color: #fff;
   min-height: 100vh;
-  
-  }
-  main {
-    .main {
-      .country {
-        -webkit-box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-        -moz-box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-        box-shadow: 0px 6px 64px 13px rgba(15, 16, 43, 1);
-      }
+}
+main {
+  .main {
+    .country {
+      -webkit-box-shadow: 0px 6px 64px 5px rgba(15, 16, 43, 1);
+      -moz-box-shadow: 0px 6px 64px 5px rgba(15, 16, 43, 1);
+      box-shadow: 0px 6px 64px 5px rgba(15, 16, 43, 1);
     }
   }
+}
 
 .light {
   background-color: #fff;
   color: #000;
   min-height: 100vh;
- 
+
   main {
     .main {
       .country {
-        -webkit-box-shadow: 0px 6px 64px 13px rgb(201, 201, 201);
-        -moz-box-shadow: 0px 6px 64px 13px rgba(201, 201, 201, 1);
-        box-shadow: 0px 6px 64px 13px rgba(201, 201, 201, 1);
+        -webkit-box-shadow: 0px 6px 64px 5px rgb(201, 201, 201);
+        -moz-box-shadow: 0px 6px 64px 5px rgba(201, 201, 201, 1);
+        box-shadow: 0px 6px 64px 5px rgba(201, 201, 201, 1);
       }
     }
   }
@@ -79,8 +78,8 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     .country {
-      width: 300px;
-      height: 300px;
+      width: 350px;
+      height: 350px;
       margin: 20px 5px;
       border-radius: 10px;
 
@@ -88,7 +87,7 @@ main {
         a {
           img {
             width: 100%;
-            height: 220px;
+            height: 250px;
           }
         }
       }

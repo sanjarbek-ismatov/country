@@ -4,7 +4,7 @@ import {
   createAsyncThunk,
 } from "@reduxjs/toolkit";
 import axios from "axios";
-import { createLogger } from "redux-logger";
+
 export type init = {
   loading: boolean;
   data: {};
@@ -52,7 +52,7 @@ export const store = configureStore({
   reducer: {
     fetcher: fetcherSlice.reducer,
   },
-  middleware: (def) => def({ serializableCheck: false }).concat(createLogger()),
+  middleware: (def) => def({ serializableCheck: false }),
 });
 
 export type data = {

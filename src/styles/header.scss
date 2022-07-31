@@ -56,3 +56,18 @@ header {
 ::placeholder {
   color: #fff;
 }
+@media (max-width: 510px) {
+  header {
+    .home-navigation {
+      justify-content: flex-end;
+      .content {
+        .input:hover {
+          width: 200px;
+        }
+      }
+    }
+    .home {
+      display: none;
+    }
+  }
+}

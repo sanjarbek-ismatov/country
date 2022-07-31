@@ -6,7 +6,7 @@ import {
   faToggleOff,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { themeContext } from "../context/themecontext";
 type changeEvent = {
   value?: string;
@@ -18,8 +18,10 @@ const Header = (props?: changeEvent) => {
   return (
     <>
       <header>
-        <nav>
-          <Link to="/">Home</Link>
+        <nav className="home-navigation">
+          <Link className="home" to="/">
+            Bosh menyu
+          </Link>
           <div className="content">
             {props?.handleChange && (
               <div className="input">

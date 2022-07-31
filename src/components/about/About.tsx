@@ -18,7 +18,7 @@ const About = () => {
   useEffect(() => {
     dispatch(fetcherThunk(code));
   }, []);
-
+  const [load, setLoad] = useState<boolean>(false);
   return (
     <>
       <div className={`${localStorage.getItem("theme") || "light"}`}>
@@ -27,7 +27,7 @@ const About = () => {
         {state &&
           state.loading === false &&
           state.data &&
-          state.data.map((el, id:number) => {
+          state.data.map((el, id: number) => {
             return (
               <div className="country-one" key={id}>
                 <div>
@@ -37,8 +37,10 @@ const About = () => {
                   </h1>
                 </div>
                 <div className="desc">
-                  <img className="gerb" src={el.coatOfArms.svg} />
-
+                  <div className="gerb">
+                    <div className={load ? "" : "loader"}></div>
+                    <img onLoad={() => setLoad(true)} src={el.coatOfArms.svg} />
+                  </div>
                   <p>
                     <span>Maydoni:</span> {el.area / 10000} KM kvadrat
                   </p>

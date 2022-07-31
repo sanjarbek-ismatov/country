@@ -12,9 +12,7 @@ const App = () => {
   useEffect(() => {
     setTheme(localStorage.getItem("theme") || "light");
   }, []);
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
+
   return (
     <themeContext.Provider value={{ theme, toggleTheme }}>
       <div className={theme}>
