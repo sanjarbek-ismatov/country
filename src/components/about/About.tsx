@@ -31,7 +31,7 @@ const About = () => {
             return (
               <div className="country-one" key={id}>
                 <div>
-                  <img src={el.flags.svg} />
+                  <img src={el.flags.svg} alt="davlat bayrog'i" />
                   <h1>
                     {el.name.common} <sup>{el.flag}</sup>
                   </h1>
@@ -39,7 +39,14 @@ const About = () => {
                 <div className="desc">
                   <div className="gerb">
                     <div className={load ? "" : "loader"}></div>
-                    <img onLoad={() => setLoad(true)} src={el.coatOfArms.svg} />
+                    {el.coatOfArms.svg ? (
+                      <img
+                        onLoad={() => setLoad(true)}
+                        src={el.coatOfArms.svg}
+                      />
+                    ) : (
+                      <p>Gerb mavjud emas!</p>
+                    )}
                   </div>
                   <p>
                     <span>Maydoni:</span> {el.area / 10000} KM kvadrat

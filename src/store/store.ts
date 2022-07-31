@@ -24,7 +24,11 @@ export const fetcherThunk = createAsyncThunk(
     return await axios
       .get("https://restcountries.com/v3.1/all")
       .then((data) =>
-        query ? data.data?.filter((el: countryType) => el.cca3 === query) : data
+        query
+          ? data.data?.filter(
+              (el: countryType) => el.cca2 === query.toUpperCase()
+            )
+          : data
       );
   }
 );

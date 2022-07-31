@@ -29,9 +29,9 @@ const Main = ({ filter }: { filter: string }) => {
                 return (
                   <div className="country" key={id}>
                     <div className="img">
-                      <Link to={"/country/" + country.cca3}>
+                      <Link to={"/country/" + country.cca2.toLowerCase()}>
                         <img
-                          onClick={() => dispatch(fetcherThunk(country.cca3))}
+                          onClick={() => dispatch(fetcherThunk(country.cca2))}
                           className="flag"
                           src={country.flags.svg}
                         />
