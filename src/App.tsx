@@ -1,7 +1,7 @@
 import Header from "./components/home/header";
 import { themeContext } from "./components/context/themecontext";
 import { useEffect, useState } from "react";
-
+// comment
 import Main from "./components/main";
 const App = () => {
   const [theme, setTheme] = useState<string>("light");
