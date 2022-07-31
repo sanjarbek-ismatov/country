@@ -6,7 +6,6 @@ import About from "./components/about/About";
 import Footer from "./components/Footer";
 import { store } from "./store/store";
 import "./styles/main.scss";
-// updated on codesandbox
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>

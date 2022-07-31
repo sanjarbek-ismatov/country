@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { data, fetcherThunk, countryType } from "../../store/store";
+
+import { fetcherThunk } from "../../store/thunks/thunk";
 import Preloader from "../preloader";
 import Header from "./Header";
 import "../../styles/about.scss";
+import { countryType } from "../../store/types/types";
 
 const About = () => {
   const { code } = useParams();

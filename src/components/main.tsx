@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { data, fetcherThunk } from "../store/store";
+import { fetcherThunk } from "../store/thunks/thunk";
+import { countryType, data } from "../store/types/types";
 import Preloader from "./preloader";
 
 const Main = ({ filter }: { filter: string }) => {
@@ -25,7 +26,7 @@ const Main = ({ filter }: { filter: string }) => {
               .filter((country: { name: { common: string } }, id: number) =>
                 country.name.common.toLowerCase().includes(filter.toLowerCase())
               )
-              .map((country, id) => {
+              .map((country: countryType, id: number) => {
                 return (
                   <div className="country" key={id}>
                     <div className="img">
