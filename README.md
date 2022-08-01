@@ -11,5 +11,6 @@
 ```shell
   git clone https://github.com/sanjarbek-ismatov/country.git
   cd country
+  npm install
   npm run dev
 ```
